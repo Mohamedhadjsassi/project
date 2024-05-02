@@ -1,0 +1,266 @@
+.App {
+  text-align: center;
+}
+/*---------------------------------------------------------------------------------*/
+/*Navbar*/
+.logo{
+  height: 100px;
+  width:100px;
+}
+/*the div containing the log in the Navbar*/
+.logoo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap : 10px;
+}
+/*the div where the dots moving in the Navbar*/
+.container {
+  position: relative;
+  width: 50px; /* Adjust as needed */
+  height: 50px; /* Adjust as needed */
+}
+.dot1 {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(255, 196, 0);
+  border-radius: 50%; /* Makes it a circle */
+  position: absolute;
+  bottom: 0; /* Start position */
+  animation: moveUpDown 1.5s ease-in infinite; /* Adjust animation duration as needed */
+}
+@keyframes moveUpDown {
+  0%, 100% { bottom: 0px; /* Start and end position */ }
+  50% {bottom: 50px; /* Middle position */ }
+}
+.dot2 {
+  width: 8px;
+  height: 8px;
+  margin-left: 10px;
+  background-color: rgb(249, 249, 249);
+  border-radius: 50%; /* Makes it a circle */
+  position: absolute;
+  bottom: 0; /* Start position */
+  animation: moveUpDown2 1.5s ease-in  infinite; /* Adjust animation duration as needed */
+}
+@keyframes moveUpDown2 {
+  5%, 105% { bottom: 0px; /* Start and end position */}
+  55% { bottom: 50px; /* Middle position */ }
+}
+.dot3 {
+  width: 8px;
+  height: 8px;
+  margin-left: 20px;
+  background-color: rgb(5, 120, 37);
+  border-radius: 50%; /* Makes it a circle */
+  position: absolute;
+  bottom: 0; /* Start position */
+  animation: moveUpDown3 1.5s ease-in  infinite; /* Adjust animation duration as needed */
+}
+@keyframes moveUpDown3 {
+  10%, 110% { bottom: 0px; /* Start and end position */}
+  60% {  bottom: 50px; /* Middle position */}
+}
+.dot4 {
+  width: 8px;
+  height: 8px;
+  margin-left: 30px;
+  background-color: rgb(172, 26, 26);
+  border-radius: 50%; /* Makes it a circle */
+  position: absolute;
+  bottom: 0; /* Start position */
+  animation: moveUpDown4 1.5s ease-in  infinite; /* Adjust animation duration as needed */
+}
+@keyframes moveUpDown4 {
+  15%, 115% { bottom: 0px; /* Start and end position */  }
+  70% {  bottom: 50px; /* Middle position */}
+}
+/* text of "select menu" */ 
+.TextMenu{ font-family:Verdana, Geneva, Tahoma, sans-serif ;font-size: 18px;width: 100px;}
+   [mode="true"] {color: white; }
+  [mode="false"]{ color: black; }
+  /* ------------------------------------------------------------------------------------------------------------------- */ 
+/*home page*/
+
+.home {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1000; /* Ensure it's above the cover */
+}
+/*the dark cover*/
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.477);
+  z-index: 10; /* Lower z-index to stay below the .home div */
+}
+/*---------------------------------------------------------------------------------*/
+
+  /* Menu page */ 
+    /* the card of one food slidinf from bottom when rendering*/ 
+  .food-card {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    animation-duration: 2s; /* Duration of animation */
+  }
+         .slide-in {
+                      animation-name: slideInFromBottom; /* Name of the animation */
+                    }
+   @keyframes slideInFromBottom {
+    from { transform: translateY(100%); /* Start position: move from bottom */ }
+    to {  transform: translateY(0); /* End position: move to original position */ }
+  }
+/* blured div when scrolling*/ 
+  .blurred-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px; /* Adjust height as needed */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for visibility */
+    z-index: 999; /* Ensure it appears above other content */
+    pointer-events: none; /* Allow interaction with content behind the div */
+  }
+          .blurred-div.visible {
+                       opacity: 1; /* Make the div visible */
+                      }
+
+
+     .food-card:hover .card-img-top {
+      cursor: pointer;
+                        transform: scale(1.5); /* Adjust the scale factor for desired zoom level */
+                        transition: transform 0.3s ease; /* Add transition for smooth animation */
+                      }  
+                      
+      button{
+        background-color: #edbe55; /* Blue background */
+        border: none;
+        color: white; /* White text */
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Add a shadow */
+      }
+      button:hover {
+        background-color: #a4894f; /* Darker blue background */
+      }
+  /*--------------------------------------------------------------------------------------------------------------------- */
+  /* user page */
+   /* the image that open from left to right */
+  .image-container {
+    background-size: cover;
+    width: 60px; /* Initial width */
+    height: 560px;
+    border-radius: 50px;
+    background-position: center;
+    transition: width 2s ease; /* Transition for the width property */
+  }
+         .image-container.loaded {
+               width: 800px; /* Actual width */
+            }
+  .coordonée{
+    margin-left: 790px;
+    
+  }    
+  input{
+    border-radius: 15px;
+    border-width:0.1px;
+    height: 25px;
+    width: 200px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }      
+  label{
+    color:#edbe55;
+    margin-top: 25px; 
+  }
+
+ 
+
+.picture-user1 {
+    position: relative;
+    animation-fill-mode: forwards;
+}
+
+.slide-up {
+    animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+    0% {
+        bottom: -500px; /* Start position below the container */
+    }
+    100% {
+        bottom: 0; /* End position at the bottom */
+    }
+}
+
+.picture-user2 {
+  position: relative;
+  animation-fill-mode: forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+  0% {
+      bottom: -500px; /* Start position below the container */
+  }
+  100% {
+      bottom: 0; /* End position at the bottom */
+  }
+}
+
+.picture-user3 {
+  position: relative;
+  animation-fill-mode: forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+  0% {
+      bottom: -500px; /* Start position below the container */
+  }
+  100% {
+      bottom: 0; /* End position at the bottom */
+  }
+}
+.picture-user4 {
+  position: relative;
+  animation-fill-mode: forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+  0% {
+      bottom: -500px; /* Start position below the container */
+  }
+  100% {
+      bottom: 0; /* End position at the bottom */
+  }
+}

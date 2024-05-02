@@ -1,0 +1,13 @@
+const nodemailer = require("nodemailer");
+
+
+
+const sendMail=async(subject,html,email){
+    const transporter = nodemailer.createTransport({
+        service:"gmail",
+        auth: {
+          user: "maddison53@ethereal.email",
+          pass: "jn7jnAPss4f63QBp6D",
+        },
+      });
+}
